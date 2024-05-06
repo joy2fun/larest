@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "dcat/laravel-admin": "dev-master as v2.2.3",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
@@ -62,5 +63,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "dcat": {
+            "type": "vcs",
+            "url": "https://github.com/joy2fun/dcat"
+        }
+    }
 }
