@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97d2ff884d49d04a124747a25e526c08",
+    "content-hash": "3ef92ac1e11d896423c36a966d4aea82",
     "packages": [
         {
             "name": "box/spout",
@@ -294,12 +294,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/joy2fun/dcat.git",
-                "reference": "cb67eb0d722db84f2ad699f57a063011286de70c"
+                "reference": "6d9e23bcf7c7502c92547dbfef2c6e3eb2a4afeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joy2fun/dcat/zipball/cb67eb0d722db84f2ad699f57a063011286de70c",
-                "reference": "cb67eb0d722db84f2ad699f57a063011286de70c",
+                "url": "https://api.github.com/repos/joy2fun/dcat/zipball/6d9e23bcf7c7502c92547dbfef2c6e3eb2a4afeb",
+                "reference": "6d9e23bcf7c7502c92547dbfef2c6e3eb2a4afeb",
                 "shasum": ""
             },
             "require": {
@@ -367,7 +367,7 @@
             "support": {
                 "source": "https://github.com/joy2fun/dcat/tree/master"
             },
-            "time": "2024-05-13T06:36:48+00:00"
+            "time": "2024-05-13T10:46:16+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -9955,7 +9955,14 @@
             "time": "2024-03-03T12:36:25+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "dcat/laravel-admin",
+            "version": "9999999-dev",
+            "alias": "v2.2.3",
+            "alias_normalized": "2.2.3.0"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "dcat/laravel-admin": 20
