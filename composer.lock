@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e85c3c2ad77e4522cb4f15d6a60c87b",
+    "content-hash": "8bdb4ee4c1e141482170c6f9247661f9",
     "packages": [
         {
             "name": "box/spout",
@@ -294,17 +294,17 @@
             "dist": {
                 "type": "path",
                 "url": "../dcat",
-                "reference": "449f700ed84edbe7bb1dea5232806941d9f3e007"
+                "reference": "cb67eb0d722db84f2ad699f57a063011286de70c"
             },
             "require": {
                 "doctrine/dbal": "^2.6|^3.0",
-                "laravel/framework": "~5.5|~6.0|~7.0|~8.0|~9.0|~10.0",
-                "php": ">=7.1.0",
+                "laravel/framework": "~10.0",
+                "php": ">=8.1.0",
                 "spatie/eloquent-sortable": "3.*|4.*"
             },
             "require-dev": {
                 "fzaninotto/faker": "^1.4",
-                "laravel/dusk": "~5.9|~6",
+                "laravel/dusk": "~7",
                 "mockery/mockery": "^1.0",
                 "phpstan/phpstan": "^0.12.0",
                 "phpunit/phpunit": "^7.5|~9"
@@ -3236,6 +3236,73 @@
                 }
             ],
             "time": "2023-11-12T21:59:55+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "b1d3255ed9ad4d7254f9f9bba386c99f4bb983d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/b1d3255ed9ad4d7254f9f9bba386c99f4bb983d1",
+                "reference": "b1d3255ed9ad4d7254f9f9bba386c99f4bb983d1",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.3",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^8.0 || ~9.4.4"
+            },
+            "suggest": {
+                "ext-relay": "Faster connection with in-memory caching (>=0.6.2)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A flexible and feature-complete Redis client for PHP.",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/predis/predis/issues",
+                "source": "https://github.com/predis/predis/tree/v2.2.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-13T16:42:03+00:00"
         },
         {
             "name": "psr/cache",
