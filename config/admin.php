@@ -283,7 +283,7 @@ return [
     'database' => [
 
         // Database connection for following tables.
-        'connection' => 'admin_mysql',
+        'connection' => '',
 
         // User tables and model.
         'users_table' => 'admin_users',
