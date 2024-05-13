@@ -12,6 +12,7 @@
         "laravel/framework": "^10.10",
         "laravel/horizon": "^5.23",
         "laravel/sanctum": "^3.3",
+        "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",
         "predis/predis": "^2.2"
     },
@@ -20,7 +21,6 @@
         "laravel/dusk": "*",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
-        "laravel/telescope": "^5.0",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
@@ -69,10 +69,10 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": {
-        "dcat": {
-            "type": "path",
-            "url": "../dcat"
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/joy2fun/dcat"
         }
-    }
+    ]
 }

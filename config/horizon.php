@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'path' => env('HORIZON_PATH', 'h'),
+    'path' => env('HORIZON_PATH', 'horizon'),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,12 @@ return [
     |
     */
 
-    'middleware' => ['web'],
+    'middleware' => [
+        'web', 
+        'admin.auth', 
+        'admin.permission', 
+        'admin.permission:allow,administrator'
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -120,6 +125,7 @@ return [
 
     'silenced' => [
         // App\Jobs\ExampleJob::class,
+        Laravel\Telescope\Jobs\ProcessPendingUpdates::class,
     ],
 
     /*
