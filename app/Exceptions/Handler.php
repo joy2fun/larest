@@ -32,7 +32,9 @@ class Handler extends ExceptionHandler
         });
 
         $this->renderable(function (Throwable $e) {
-            return Admin::json()->withException($e)->send();
+            if (app('admin.omni')->isApiRequest()) {
+                return Admin::json()->withException($e)->send();
+            }
         });
     }
 }
