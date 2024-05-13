@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Dcat\Admin\Admin;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -24,7 +26,13 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            if ($e instanceof BadRequestException) {
+                return false;
+            }
+        });
+
+        $this->renderable(function (Throwable $e) {
+            return Admin::json()->withException($e)->send();
         });
     }
 }
