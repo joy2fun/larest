@@ -2,8 +2,8 @@ FROM php:8.1-apache-buster
 
 WORKDIR /var/www/html
 
-COPY docker/php/zzz.ini /usr/local/etc/php/conf.d/zzz.ini
-COPY docker/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+COPY docker/php.ini /usr/local/etc/php/conf.d/zzz.ini
+COPY docker/apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN sed -ri \
     -e "s/AccessFileName .htaccess/#AccessFileName .htaccess/" \
