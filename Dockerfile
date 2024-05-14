@@ -41,3 +41,5 @@ COPY --chown=www-data:www-data . .
 
 RUN composer install -n --ignore-platform-reqs --no-dev --no-progress \
     && touch .env
+
+RUN docker-php-ext-enable redis
