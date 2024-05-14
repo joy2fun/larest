@@ -275,12 +275,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/joy2fun/dcat.git",
-                "reference": "e48a1c71241ef70659079058e4381536c05f524f"
+                "reference": "4ea21b92e9669b67be214a9edfc1f071b5457128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joy2fun/dcat/zipball/e48a1c71241ef70659079058e4381536c05f524f",
-                "reference": "e48a1c71241ef70659079058e4381536c05f524f",
+                "url": "https://api.github.com/repos/joy2fun/dcat/zipball/4ea21b92e9669b67be214a9edfc1f071b5457128",
+                "reference": "4ea21b92e9669b67be214a9edfc1f071b5457128",
                 "shasum": ""
             },
             "require": {
@@ -348,7 +348,7 @@
             "support": {
                 "source": "https://github.com/joy2fun/dcat/tree/master"
             },
-            "time": "2024-05-14T02:47:37+00:00"
+            "time": "2024-05-14T06:02:42+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

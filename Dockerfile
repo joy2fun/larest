@@ -27,19 +27,15 @@ RUN apt-get update \
     zlib1g-dev \
     && apt-get clean \
     && apt-get autoclean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# hadolint ignore=DL3059
-RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
-    && docker-php-ext-install gd intl pdo_mysql zip \
-    && docker-php-ext-enable opcache \
+    && docker-php-ext-install gd intl pdo_mysql zip pcntl \
     && pecl install redis \
+    && docker-php-ext-enable opcache redis \
     && a2enmod rewrite remoteip 
 
 COPY --chown=www-data:www-data . .
 
 RUN composer install -n --ignore-platform-reqs --no-dev --no-progress \
-    && touch .env
-
-RUN docker-php-ext-enable redis
+    && mv .env.example .env
