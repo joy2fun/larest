@@ -33,5 +33,5 @@ COPY --chown=www-data:www-data . .
 RUN curl -o /usr/local/bin/composer https://getcomposer.org/download/latest-stable/composer.phar \
     && chmod +x /usr/local/bin/composer; \
     composer install -n --ignore-platform-reqs --no-dev --no-progress --optimize-autoloader \
-    composer clear-cache; \
-    mv .env.example .env
+    && composer clear-cache \
+    && mv .env.example .env
