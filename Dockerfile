@@ -3,9 +3,9 @@ FROM php:8.1-apache-bookworm
 WORKDIR /var/www/html
 
 # hadolint ignore=DL3008
-RUN savedAptMark="$(apt-mark showmanual)" \
-    && apt-get update \
-    && apt-get install --no-install-recommends -y \
+RUN savedAptMark="$(apt-mark showmanual)"; \
+    apt-get update; \
+    apt-get install --no-install-recommends -y \
         libfreetype6-dev libicu-dev libjpeg62-turbo-dev libpng-dev libpq-dev \
         libsasl2-dev libssl-dev libwebp-dev libxpm-dev libzip-dev libzstd-dev \
         zlib1g-dev \
@@ -15,7 +15,7 @@ RUN savedAptMark="$(apt-mark showmanual)" \
     && pecl install redis \
     && docker-php-ext-enable opcache redis \
     && apt-mark auto '.*' > /dev/null; \
-    && apt-mark manual $savedAptMark > /dev/null; \
+        apt-mark manual $savedAptMark > /dev/null; \
         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
         apt-get clean; \
         apt-get autoclean; \
