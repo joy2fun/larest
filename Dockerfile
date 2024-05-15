@@ -31,8 +31,8 @@ RUN apt-get update \
         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
-RUN a2enmod rewrite remoteip \
-    && sed -ri \
+RUN a2enmod rewrite remoteip; \
+    sed -ri \
         -e "s/AccessFileName .htaccess/#AccessFileName .htaccess/" \
         -e "s/AllowOverride All/AllowOverride None/g"  \
         -e "s/ServerTokens OS/ServerTokens Prod/g" \
