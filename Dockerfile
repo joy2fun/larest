@@ -3,33 +3,23 @@ FROM php:8.1-apache-bookworm
 WORKDIR /var/www/html
 
 # hadolint ignore=DL3008
-RUN apt-get update \
+RUN savedAptMark="$(apt-mark showmanual)" \
+    && apt-get update \
     && apt-get install --no-install-recommends -y \
-        cron \
-        icu-devtools \
-        jq \
         libfreetype6-dev libicu-dev libjpeg62-turbo-dev libpng-dev libpq-dev \
         libsasl2-dev libssl-dev libwebp-dev libxpm-dev libzip-dev libzstd-dev \
-        unzip \
         zlib1g-dev \
     && cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
     && docker-php-ext-install -j$(nproc) gd intl pdo_mysql zip pcntl \
     && pecl install redis \
     && docker-php-ext-enable opcache redis \
-    && apt-get clean \
-    && apt-get autoclean \
     && apt-mark auto '.*' > /dev/null; \
-        find /usr/local -type f -executable -exec ldd '{}' ';' \
-            | awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) { next }; gsub("^/(usr/)?", "", so); printf "*%s\n", so }' \
-            | sort -u \
-            | xargs -r dpkg-query --search \
-            | cut -d: -f1 \
-            | sort -u \
-            | xargs -r apt-mark manual \
-        ; \
+    && apt-mark manual $savedAptMark > /dev/null; \
         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+        apt-get clean; \
+        apt-get autoclean; \
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; 
 
 RUN a2enmod rewrite remoteip; \
     sed -ri \
