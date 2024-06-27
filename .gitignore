@@ -18,3 +18,4 @@ yarn-error.log
 /.idea
 /.vscode
 /composer.lock
+dcat_admin_ide_helper.php
