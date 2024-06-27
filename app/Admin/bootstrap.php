@@ -33,5 +33,8 @@ Admin::style('
     div.d-sm-flex {
         display: flex !important;
     }
+    .table.custom-data-table.data-table tbody tr {
+        cursor: unset !important;
+    }
 ');
 
