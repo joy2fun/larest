@@ -1,6 +1,8 @@
 <?php
 
+use App\Admin\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('admin.auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    'middleware' => [
+        'admin.is_api',
+        // 'admin.auth:sanctum',
+    ],
+], function (Router $router) {
+    $router->resource('users', UserController::class);
 });

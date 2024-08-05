@@ -93,8 +93,8 @@ return [
 
     'middleware' => [
         'web',
-        'admin.auth', 
-        'admin.permission', 
+        'admin.auth',
+        'admin.permission',
         'admin.permission:allow,administrator'
     ],
 
@@ -110,7 +110,7 @@ return [
     */
 
     'only_paths' => [
-        // 'api/*'
+        'api/*'
     ],
 
     'ignore_paths' => [
@@ -197,7 +197,7 @@ return [
         Watchers\RequestWatcher::class => [
             'enabled' => env('TELESCOPE_REQUEST_WATCHER', true),
             'size_limit' => env('TELESCOPE_RESPONSE_SIZE_LIMIT', 64),
-            'ignore_http_methods' => ['GET', 'HEAD'],
+            'ignore_http_methods' => ['HEAD'],
             'ignore_status_codes' => [401, 404],
         ],
 
