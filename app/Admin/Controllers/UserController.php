@@ -61,6 +61,7 @@ class UserController extends AdminController
 
             $form->text('name');
             $form->text('email');
+            $form->text('password');
 
             $form->display('created_at');
             $form->display('updated_at');
