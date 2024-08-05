@@ -2,6 +2,7 @@
 ### envs
 
 ```sh
+APP_KEY=
 APP_NAME=larest
 ADMIN_ROOT_USERNAME=admin
 ADMIN_ROOT_PASSWORD=admin
@@ -27,8 +28,9 @@ DB_PREFIX=
 composer install
 php artisan key:generate
 php artisan admin:install
+
 # upgrade dcat. optional
-composer upgrade dcat/laravel-admin
+# composer upgrade dcat/laravel-admin
 # php artisan vendor:publish --force
 ```
 
